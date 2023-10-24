@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-This PowerShell script automates several administrative tasks to help you manage script execution policies and code-signing in PowerShell.
+This PowerShell script automates several administrative tasks to help you manage script execution policies and code-signing in PowerShell. //test FIXME TODO 
 
 .DESCRIPTION
 The script performs the following tasks:
