@@ -1,3 +1,4 @@
 {
-    "gitdoc.enabled": true
+    "gitdoc.enabled": true,
+    "todo-tree.tree.scanMode": "open files"
 }
