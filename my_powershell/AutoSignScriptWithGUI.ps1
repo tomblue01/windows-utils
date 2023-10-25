@@ -59,10 +59,14 @@ function Set-ExecutionPolicyAtScope {
     param (
         [string]$scope
     )
-    # Changed this line to set the policy to AllSigned
-    Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope $scope -Force
-    $finalPolicy = Get-ExecutionPolicy -Scope $scope
-    $script:updatedPolicies[$scope] = $finalPolicy
+    try {
+        Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope $scope -Force -ErrorAction Stop
+        $finalPolicy = Get-ExecutionPolicy -Scope $scope
+        $script:updatedPolicies[$scope] = $finalPolicy
+    }
+    catch {
+        Write-Host "Failed to set policy for ${scope}: $_"
+    }
 }
 
 # Initialize the summary hashtables
