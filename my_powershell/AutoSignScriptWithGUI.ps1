@@ -83,7 +83,6 @@ if ($userConsent -ne 'proceed') {
 $scopes = @("Process", "CurrentUser", "LocalMachine")
 foreach ($scope in $scopes) {
     Set-ExecutionPolicyAtScope -scope $scope
-
 }
 
 # Display the old and new policy summaries
