@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-This PowerShell script automates several administrative tasks to help you manage script execution policies and code-signing in PowerShell. //test FIXME TODO 
+This PowerShell script automates several administrative tasks to help you manage script execution policies and code-signing in PowerShell. // TODO test
 
 .DESCRIPTION
 The script performs the following tasks:
@@ -59,7 +59,8 @@ function Set-ExecutionPolicyAtScope {
     param (
         [string]$scope
     )
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope $scope -Force
+    # Changed this line to set the policy to AllSigned
+    Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope $scope -Force
     $finalPolicy = Get-ExecutionPolicy -Scope $scope
     $script:updatedPolicies[$scope] = $finalPolicy
 }
@@ -82,6 +83,7 @@ if ($userConsent -ne 'proceed') {
 $scopes = @("Process", "CurrentUser", "LocalMachine")
 foreach ($scope in $scopes) {
     Set-ExecutionPolicyAtScope -scope $scope
+
 }
 
 # Display the old and new policy summaries
