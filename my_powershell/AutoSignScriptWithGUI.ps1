@@ -6,8 +6,8 @@ This PowerShell script automates several administrative tasks to help you manage
 The script performs the following tasks:
 1. Retrieves the current PowerShell execution policies for various scopes (Process, CurrentUser, LocalMachine).
 2. Displays these policies to the user for review.
-3. Prompts the user for permission to change these policies to 'RemoteSigned', if they are not already set to that.
-4. Changes the execution policies to 'RemoteSigned' for each scope if the user gives consent.
+3. Prompts the user for permission to change these policies to 'AllSigned', if they are not already set to that.
+4. Changes the execution policies to 'AllSigned' for each scope if the user gives consent.
 5. Summarizes the changes made, if any.
 6. Uses a file dialog to allow the user to select a PowerShell (.ps1) script file.
 7. Creates a self-signed certificate, if necessary.
